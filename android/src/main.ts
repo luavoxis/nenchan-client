@@ -15,7 +15,7 @@ async function init() {
   });
 }
 
-App.addListener("appUrlOpen", async ({ url }) => {
+App.addListener("appUrlOpen", async ({ url }: { url: string }) => {
   if (url.startsWith("nenchan://")) {
     const path = url.replace("nenchan://", "");
     await Browser.open({
@@ -25,7 +25,7 @@ App.addListener("appUrlOpen", async ({ url }) => {
   }
 });
 
-App.addListener("backButton", async ({ canGoBack }) => {
+App.addListener("backButton", async ({ canGoBack }: { canGoBack: boolean }) => {
   if (!canGoBack) {
     App.exitApp();
   }
