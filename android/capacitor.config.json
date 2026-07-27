@@ -9,7 +9,7 @@
     "allowNavigation": ["*"]
   },
   "android": {
-    "backgroundColor": "#00000000",
+    "backgroundColor": "#0d1117",
     "allowMixedContent": true,
     "captureInput": true
   },
