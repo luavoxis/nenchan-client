@@ -1,12 +1,14 @@
 import { App } from "@capacitor/app";
 import { StatusBar, Style } from "@capacitor/status-bar";
 
-const NENCHAN_URL = "https://nenchan.vercel.app/api";
-
 async function init() {
   await StatusBar.setStyle({ style: Style.Light });
-  await StatusBar.setBackgroundColor({ color: "#0d1117" });
+  await StatusBar.setOverlaysWebView({ overlay: true });
 }
+
+App.addListener("appUrlOpen", async ({ url }: { url: string }) => {
+  window.location.href = url;
+});
 
 App.addListener("backButton", async ({ canGoBack }: { canGoBack: boolean }) => {
   if (!canGoBack) {
