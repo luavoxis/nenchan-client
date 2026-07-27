@@ -10,16 +10,14 @@
   },
   "android": {
     "backgroundColor": "#0d1117",
-    "navigationBarColor": "#0d1117",
-    "navigationBarContentColor": "#c9d1d9",
     "allowMixedContent": true,
     "captureInput": true
   },
   "plugins": {
     "StatusBar": {
-      "style": "DARK",
-      "backgroundColor": "#0d1117",
-      "overlaysWebView": false
+      "style": "LIGHT",
+      "overlaysWebView": true,
+      "backgroundColor": "#0d1117"
     }
   }
 }

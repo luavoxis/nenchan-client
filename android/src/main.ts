@@ -2,9 +2,8 @@ import { App } from "@capacitor/app";
 import { StatusBar, Style } from "@capacitor/status-bar";
 
 async function init() {
-  await StatusBar.setStyle({ style: Style.Dark });
-  await StatusBar.setBackgroundColor({ color: "#0d1117" });
-  await StatusBar.setOverlaysWebView({ overlay: false });
+  await StatusBar.hide();
+  await StatusBar.setOverlaysWebView({ overlay: true });
 }
 
 App.addListener("appUrlOpen", async ({ url }: { url: string }) => {
