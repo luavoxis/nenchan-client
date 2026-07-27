@@ -1,0 +1,38 @@
+{
+  "name": "nenchan-desktop",
+  "version": "1.0.0",
+  "description": "Nenchan Desktop WebView Client",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && electron dist/main.js",
+    "dev": "npm run build && electron dist/main.js",
+    "dist": "npm run build && electron-builder"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.12.0",
+    "electron": "^43.0.0",
+    "electron-builder": "^26.15.7",
+    "typescript": "^7.0.0"
+  },
+  "build": {
+    "appId": "com.nenchan.desktop",
+    "productName": "Nenchan",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+import type { CapacitorConfig } from "@capacitor/cli";
+
+const config: CapacitorConfig = {
+  appId: "com.nenchan.app",
+  appName: "Nenchan",
+  webDir: "www",
+  server: {
+    androidScheme: "https",
+    url: "https://nenchan.vercel.app/api",
+    cleartext: false,
+  },
+  android: {
+    backgroundColor: "#0d1117",
+  },
+  plugins: {
+    StatusBar: {
+      backgroundColor: "#0d1117",
+      style: "DARK",
+      overlaysWebView: true,
+    },
+  },
+};
+
+export default config;
