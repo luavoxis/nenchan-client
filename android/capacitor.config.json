@@ -4,8 +4,6 @@
   "webDir": "www",
   "server": {
     "androidScheme": "https",
-    "url": "https://nenchan.vercel.app/api",
-    "cleartext": false,
     "allowNavigation": ["*"]
   },
   "android": {
