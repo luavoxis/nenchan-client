@@ -75,7 +75,7 @@ function buildMenu() {
       label: "Window",
       submenu: [
         { role: "minimize" },
-        { role: "maximize" },
+        { label: "Maximize", accelerator: "CmdOrCtrl+Shift+Enter", click: () => mainWindow?.maximize() },
         { role: "close" },
       ],
     },
