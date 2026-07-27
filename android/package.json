@@ -10,13 +10,13 @@
     "dev": "npm run build && npm run cap:sync"
   },
   "dependencies": {
-    "@capacitor/android": "^8.4.2",
-    "@capacitor/browser": "^8.4.2",
+    "@capacitor/android": "^8.3.0",
+    "@capacitor/browser": "^8.0.3",
     "@capacitor/core": "^8.4.2",
-    "@capacitor/status-bar": "^8.4.2"
+    "@capacitor/status-bar": "^8.0.2"
   },
   "devDependencies": {
-    "@capacitor/cli": "^8.4.2",
+    "@capacitor/cli": "^8.3.4",
     "typescript": "^7.0.0"
   }
 }
