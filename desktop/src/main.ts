@@ -9,8 +9,8 @@ function createWindow() {
   const isDark = nativeTheme.shouldUseDarkColors;
 
   mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 800,
+    width: 800,
+    height: 600,
     minWidth: 800,
     minHeight: 600,
     title: "Nenchan",
