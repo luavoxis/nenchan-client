@@ -8,13 +8,15 @@
     "cleartext": false
   },
   "android": {
-    "backgroundColor": "#0d1117"
+    "backgroundColor": "#0d1117",
+    "navigationBarColor": "#0d1117",
+    "navigationBarContentColor": "#c9d1d9"
   },
   "plugins": {
     "StatusBar": {
       "backgroundColor": "#0d1117",
-      "style": "DARK",
-      "overlaysWebView": true
+      "style": "LIGHT",
+      "overlaysWebView": false
     }
   }
 }

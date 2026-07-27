@@ -1,4 +1,4 @@
-import { app, BrowserWindow, shell, Menu, nativeTheme, ipcMain } from "electron";
+import { app, BrowserWindow, shell, nativeTheme, ipcMain, Menu } from "electron";
 import * as path from "path";
 
 const NENCHAN_URL = "https://nenchan.vercel.app/api";
@@ -16,6 +16,7 @@ function createWindow() {
     title: "Nenchan",
     backgroundColor: isDark ? "#0d1117" : "#ffffff",
     titleBarStyle: "hiddenInset",
+    autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
@@ -37,53 +38,6 @@ function createWindow() {
   });
 }
 
-function buildMenu() {
-  const template: Electron.MenuItemConstructorOptions[] = [
-    {
-      label: "File",
-      submenu: [
-        { role: "quit" },
-      ],
-    },
-    {
-      label: "Edit",
-      submenu: [
-        { role: "undo" },
-        { role: "redo" },
-        { type: "separator" },
-        { role: "cut" },
-        { role: "copy" },
-        { role: "paste" },
-        { role: "selectAll" },
-      ],
-    },
-    {
-      label: "View",
-      submenu: [
-        { role: "reload" },
-        { role: "forceReload" },
-        { role: "toggleDevTools" },
-        { type: "separator" },
-        { role: "resetZoom" },
-        { role: "zoomIn" },
-        { role: "zoomOut" },
-        { type: "separator" },
-        { role: "togglefullscreen" },
-      ],
-    },
-    {
-      label: "Window",
-      submenu: [
-        { role: "minimize" },
-        { label: "Maximize", accelerator: "CmdOrCtrl+Shift+Enter", click: () => mainWindow?.maximize() },
-        { role: "close" },
-      ],
-    },
-  ];
-
-  Menu.setApplicationMenu(Menu.buildFromTemplate(template));
-}
-
 function registerIPC() {
   ipcMain.on("window:minimize", () => mainWindow?.minimize());
   ipcMain.on("window:maximize", () => {
@@ -97,8 +51,8 @@ function registerIPC() {
 }
 
 app.whenReady().then(() => {
+  Menu.setApplicationMenu(null);
   registerIPC();
-  buildMenu();
   createWindow();
 
   app.on("activate", () => {
